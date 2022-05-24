@@ -73,4 +73,62 @@ fecha, número de páginas y el número de ejemplares vendidos.
 
   ![DBevaluciojuancarloscampos](https://user-images.githubusercontent.com/101900664/169730516-c6b45ca1-c942-4daf-9163-b31db3ba0ae9.png)
 
+           CREATE DATABASE Editorial;
+          USE Editorial;
+          --creamos tablas que no tengan dependencia
+          create table sucursal(
+           codigo_de_suc INT UNSIGNED PRIMARY KEY,
+            domicilio VARCHAR(100) NOT NULL,
+            telefono INT UNSIGNED not null
+         );
+         create table revista(
+           Numero_de_registro INT UNSIGNED PRIMARY KEY,
+            periodicidad VARCHAR(100) NOT NULL,
+            tipo VARCHAR(100) not null,
+           titulo varchar(100) not null
+         );
+         create table periodista(
+           NIF_perio INT UNSIGNED primary key,
+           nombre varchar (100) not null,
+           apellido varchar(100) not null,
+           especialidad varchar(100) not null,
+           telefono INT UNSIGNED not null
+          );
+          --cramos tablas con depencencia
+          create table empleados(
+          NIF_emple INT UNSIGNED not null,
+            nombre varchar(100) not null,
+            apellido varchar(100) not null,
+            telefono INT UNSIGNED not null,
+            codigo_de_suc1 INT UNSIGNED,
+            FOREIGN KEY (codigo_de_suc1) REFERENCES sucursal(codigo_de_suc)
+            );
+           create table sección(
+           ID_sec INT UNSIGNED primary key,
+             extención INT UNSIGNED not null,
+             titulo varchar(100)not null,
+             Numero_de_registro3 INT UNSIGNED,
+             FOREIGN KEY(Numero_de_registro3) REFERENCES revista(Numero_de_registro)
+           );
+           create table ejemplar(
+             ID_EJEM INT UNSIGNED primary key,
+             Numero_de_paginas INT UNSIGNED not null,
+             Ejemp_vend INT UNSIGNED not null,
+             fecha DATE,
+             Numero_de_registro4 INT UNSIGNED,
+             FOREIGN KEY(Numero_de_registro4) REFERENCES revista(Numero_de_registro)
+           );
+           --creamos tablas intermedias
+           create table suc_rev (
+           codigo_de_suc2 INT UNSIGNED  not null,
+             Numero_de_registro1 INT UNSIGNED not null,
+              FOREIGN KEY ( Numero_de_registro1) REFERENCES revista(Numero_de_registro),
+            FOREIGN KEY (codigo_de_suc2) REFERENCES sucursal(codigo_de_suc)
+           );
+           create table rev_perio(
+           Numero_de_registro2 INT UNSIGNED not null,
+             NIF_perio1 INT UNSIGNED not null,
+              FOREIGN KEY ( Numero_de_registro2) REFERENCES revista(Numero_de_registro),
+           FOREIGN KEY (NIF_perio1) REFERENCES periodista( NIF_perio)  
+           );
 
