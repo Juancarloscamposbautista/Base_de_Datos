@@ -49,6 +49,10 @@ principales, las ventajas y desventajas. (valor 6)
 
 ![image](https://user-images.githubusercontent.com/91554777/170415427-e2b7321b-a97f-43b0-ac24-6e506c307e6b.png)
 
+
+![MAPAconseptual](https://user-images.githubusercontent.com/101900664/170423553-d5cc98e4-9e3c-4980-b78e-3a22ac6e90f3.png)
+
+
 ## Práctica 6.
 ### Herramienta en línea y ejercicio necesarios para realizar las prácticas
 
