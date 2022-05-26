@@ -71,8 +71,36 @@ Tienda de informática
 
 
 Modelo entidad/relación
+  
+  
+             CREATE DATABASE Tienda_de_informática;
+                           USE Tienda_de_informática;
 
+                           create table Producto(
+                            codigo VARCHAR(100) PRIMARY KEY,
+                             Nombre_de_producto VARCHAR(100) NOT NULL,
+                             precio BIGINT UNSIGNED not null,
+                             Fabricante VARCHAR(100) not null
+                          );
+                          INSERT INTO Producto VALUES ('DD-23','Disco duro SATA3 1TB',86.99,'SEAGATE');
+                          INSERT INTO Producto VALUES ('MM-34','Memoria RAM DDR4 8GB',120.6,'CRUCIAL');
+                          INSERT INTO Producto VALUES ('DD-98','Disco SSD 1TB',150.99,'SAMNSUNG');
+                          INSERT INTO Producto VALUES ('MM-98','Geforce GTX 1050Ti',185.7,'GIGABYTE');
+                          INSERT INTO Producto VALUES ('MM-23','Geforce GTX 1080 Xtreme',755.6,'CRUCIAL');
+                          INSERT INTO Producto VALUES ('MT-12','Monitor 24 LED Full HD',202.1,'ASUS');
+                          INSERT INTO Producto VALUES ('MT-08','Monitor 27 LED Full HD',245.99,'ASUS');
+                          INSERT INTO Producto VALUES ('LP-19','Portátil Yoga 520',559.2,'LENOVO');
+                          INSERT INTO Producto VALUES ('LP-11','Portátil Ideapd 320',444.2,'LENOVO');
+                          INSERT INTO Producto VALUES ('IM-56','Impresora HP Deskjet 3720',599.93,'HP');
+                          INSERT INTO Producto VALUES ('IP-54','Impresora HP Laserjet Pro M26nw',180.3,'HP');
+               
 
 
 
 Base de datos para MySQL
+
+
+![evalucion 2 juan carlos campos](https://user-images.githubusercontent.com/101900664/170512612-4c142539-d3c4-4f42-86cc-f8d054235193.png)
+
+
+
