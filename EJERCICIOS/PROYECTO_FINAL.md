@@ -31,7 +31,8 @@ un código de categoría único.
 ● Una pieza sólo puede pertenecer a una categoría.
 
 
-![Untitled Diagram drawio (1)](https://user-images.githubusercontent.com/101900664/171333160-6965ddfe-9d3f-43c4-80eb-0e4d7f46f00d.png)
+
+![Untitled Diagram drawio (1)](https://user-images.githubusercontent.com/101900664/171442115-55f255fc-a5cc-48af-b019-7ea188223d32.png)
 
 
 
@@ -63,7 +64,6 @@ un código de categoría único.
 
             CREATE TABLE suministra(
             Fecha_d_suministro DATE not null,
-              pieza_suministrada VARCHAR(100) not null,
               cantidad_suministrada VARCHAR(100) not null,
               cod_prove1 INT UNSIGNED not null,
               cod_piez1 INT UNSIGNED not null,
