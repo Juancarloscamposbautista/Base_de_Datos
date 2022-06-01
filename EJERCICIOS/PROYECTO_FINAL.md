@@ -31,4 +31,42 @@ un código de categoría único.
 ● Una pieza sólo puede pertenecer a una categoría.
 
 
-![pro final juan carlos campos](https://user-images.githubusercontent.com/101900664/171229348-54616eda-b1bf-401e-b906-30cd2523a0ce.png)
+![Untitled Diagram drawio (1)](https://user-images.githubusercontent.com/101900664/171333160-6965ddfe-9d3f-43c4-80eb-0e4d7f46f00d.png)
+
+
+
+            CREATE DATABASE PROVEEDORES;
+            USE PROVEEDORES;
+
+            CREATE TABLE Proveedor(
+              cod_prove INT UNSIGNED PRIMARY KEY,
+             nombre_pro VARCHAR(100) not null,
+              dirección VARCHAR(100) not null,
+              ciudad VARCHAR(100) not null,
+              privincia VARCHAR(100) not null
+            );
+
+            CREATE TABLE categoria( 
+            cod_catego INT UNSIGNED PRIMARY KEY,
+              nombre_cate VARCHAR (100) not null
+            );
+
+            CREATE TABLE Pieza(
+            cod_piez INT UNSIGNED PRIMARY KEY,
+            nombre_piez VARCHAR (100) not null,
+              color VARCHAR(100) not null,
+              precio INT UNSIGNED not null,
+              cod_catego1 INT UNSIGNED not null,
+              FOREIGN KEY (cod_catego1) REFERENCES categoria
+              (cod_catego)
+            );
+
+            CREATE TABLE suministra(
+            Fecha_d_suministro DATE not null,
+              pieza_suministrada VARCHAR(100) not null,
+              cantidad_suministrada VARCHAR(100) not null,
+              cod_prove1 INT UNSIGNED not null,
+              cod_piez1 INT UNSIGNED not null,
+              FOREIGN KEY (cod_prove1) REFERENCES Proveedor(cod_prove),
+              FOREIGN KEY (cod_piez1) REFERENCES Pieza(cod_piez)
+            );
