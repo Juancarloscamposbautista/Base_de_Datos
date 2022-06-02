@@ -97,6 +97,19 @@ Tabla alumnos:
 
 ● nota (número real)
 
+
+DROP DATABASE test;
+CREATE DATABASE test;
+        USE test;
+
+        CREATE TABLE alumnos(
+          id INT UNSIGNED PRIMARY KEY,
+         nombre VARCHAR(100) not null,
+          apellido1 VARCHAR(100) not null,
+          apellido2 VARCHAR(100) not null,
+          nota FLOAT not null
+        );
+
 Una vez creada la tabla escriba dos triggers con las siguientes características:
 
 ● Trigger 1: trigger_check_nota_before_insert
