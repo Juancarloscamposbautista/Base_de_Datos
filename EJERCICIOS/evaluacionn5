@@ -14,21 +14,39 @@ Lista el nombre de todos los productos que hay en la tabla producto.
 
 1. Lista los nombres y los precios de todos los productos de la tabla producto.
 
+         USE Tienda_de_informática;
+         SELECT Nombre_de_producto,precio FROM Producto;
+
 2. Lista todas las columnas de la tabla producto.
 
+         USE Tienda_de_informática;
+         SELECT *FROM Producto;
 
 3. Devuelve una lista con el nombre del producto, precio y nombre de fabricante de
 todos los productos de la base de datos.
+
+         USE Tienda_de_informática;
+         SELECT Nombre_de_producto,precio,Fabricante FROM Producto;
 
 Subconsultas (En la cláusula WHERE)
 1. Devuelve todos los productos del fabricante Lenovo. (Sin utilizar INNER
 JOIN).
 
+      USE Tienda_de_informática;
+      SELECT Nombre_de_producto,precio,Fabricante FROM Producto where Fabricante='LENOVO';
 
 2. Devuelve todos los datos de los productos que tienen el mismo precio que el
 producto más caro del fabricante Lenovo. (Sin utilizar INNER JOIN).
+
+   USE Tienda_de_informática;
+   SELECT * FROM Producto 
+
+      where precio >= 559.2;
 
 
 3. Lista el nombre del producto más caro del fabricante Lenovo.
  
  
+USE Tienda_de_informática;
+SELECT Nombre_de_producto , max(precio)  FROM Producto 
+where  Fabricante='LENOVO' and precio > 559.2 group by(Nombre_de_producto) ;
